@@ -1,0 +1,72 @@
+{
+  "name": "react-voice-feedback",
+  "version": "1.0.0",
+  "description": "A React component library for voice feedback using Speech Recognition API with automatic language detection",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "voice",
+    "speech-recognition",
+    "feedback",
+    "multilingual",
+    "component",
+    "typescript",
+    "web-speech-api"
+  ],
+  "author": "Olcay Han Korkut",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olcayhan/react-voice-feedback.git"
+  },
+  "homepage": "https://github.com/olcayhan/react-voice-feedback#readme",
+  "bugs": {
+    "url": "https://github.com/olcayhan/react-voice-feedback/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:lib": "vite build --mode lib && npm run build:types",
+    "build:types": "node -e \"const fs = require('fs'); const content = 'import * as React from \\\"react\\\";\\n\\nexport interface VoiceFeedbackProps {\\n  language?: string;\\n  onTranscript?: (text: string) => void;\\n  onStart?: () => void;\\n  onEnd?: () => void;\\n  onError?: (error: string) => void;\\n  buttonTexts?: {\\n    start: string;\\n    stop: string;\\n  };\\n  showTranscript?: boolean;\\n  continuous?: boolean;\\n  autoStop?: boolean;\\n}\\n\\nexport declare const VoiceFeedback: React.FC<VoiceFeedbackProps>;'; fs.writeFileSync('dist/index.d.ts', content);\"",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

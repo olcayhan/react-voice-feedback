@@ -1,0 +1,26 @@
+# Development files
+src/
+index.html
+*.config.ts
+*.config.js
+.eslintrc.*
+tsconfig.*.json
+
+# Build artifacts (keep dist/ out since we want to include it)
+node_modules/
+
+# Development and testing
+.vscode/
+.git/
+.gitignore
+*.log
+*.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
